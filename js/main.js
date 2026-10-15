@@ -54,3 +54,24 @@ orderForm.addEventListener('submit', (event) => {
 
     orderDialog.close();
 });
+
+
+// Кнопка «Наверх»
+const scrollTopButton = document.getElementById('scroll-top');
+
+if (scrollTopButton) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            scrollTopButton.classList.add('scroll-top--visible');
+        } else {
+            scrollTopButton.classList.remove('scroll-top--visible');
+        }
+    });
+
+    scrollTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
