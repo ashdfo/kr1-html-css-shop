@@ -1,0 +1,342 @@
+
+/* =========================================
+   ДОСТАВКА И ОПЛАТА — ВИНТАЖНАЯ ПОЧТА
+========================================= */
+
+.delivery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
+    margin-bottom: 85px;
+    align-items: stretch;
+}
+
+/* Основные карточки */
+
+.delivery-card {
+    position: relative;
+    display: block;
+    padding: 42px 38px;
+    background: var(--white);
+    border: 1px solid rgba(52, 48, 42, 0.2);
+    box-shadow: 5px 6px 0 rgba(52, 48, 42, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Небольшая декоративная линия */
+
+.delivery-card::before {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 4px;
+    background: var(--brick);
+    margin-bottom: 22px;
+}
+
+.delivery-card:nth-child(2)::before {
+    background: var(--olive);
+}
+
+.delivery-card:hover {
+    transform: translateY(-5px) rotate(-0.3deg);
+    box-shadow: 8px 11px 0 rgba(52, 48, 42, 0.1);
+}
+
+/* Заголовки */
+
+.delivery-card h2 {
+    font-family: var(--heading-font);
+    font-size: 46px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--dark);
+    margin-bottom: 35px;
+}
+
+/* Пункты */
+
+.delivery-item {
+    position: relative;
+    padding: 0 0 23px 19px;
+    margin-bottom: 23px;
+    border-bottom: 1px dashed rgba(52, 48, 42, 0.25);
+}
+
+.delivery-item:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.delivery-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    background: var(--mustard);
+    border-radius: 50%;
+}
+
+.delivery-card:nth-child(2) .delivery-item::before {
+    background: var(--olive);
+}
+
+.delivery-item h3 {
+    font-family: var(--main-font);
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--brick);
+    margin-bottom: 9px;
+}
+
+.delivery-card:nth-child(2) .delivery-item h3 {
+    color: var(--olive);
+}
+
+.delivery-item p {
+    font-family: var(--main-font);
+    font-size: 14px;
+    line-height: 1.8;
+    color: #625B50;
+    margin: 0;
+}
+
+
+/* =========================================
+   ВОЗВРАТ И ОБМЕН — ПОЧТОВАЯ НАКЛЕЙКА
+========================================= */
+
+.return-block {
+    position: relative;
+    overflow: hidden;
+    background: var(--olive);
+    color: var(--white);
+    padding: 65px 55px;
+    text-align: center;
+    margin-bottom: 90px;
+    border: 2px dashed rgba(255, 249, 239, 0.6);
+    outline: 7px solid var(--olive);
+    outline-offset: -12px;
+}
+
+/* Декоративные круги */
+
+.return-block::before,
+.return-block::after {
+    content: "";
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    border: 1px solid rgba(255, 249, 239, 0.2);
+    border-radius: 50%;
+}
+
+.return-block::before {
+    top: -65px;
+    left: -35px;
+}
+
+.return-block::after {
+    bottom: -65px;
+    right: -35px;
+}
+
+.return-block h2 {
+    position: relative;
+    z-index: 1;
+    font-family: var(--heading-font);
+    font-size: 46px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.return-block p {
+    position: relative;
+    z-index: 1;
+    max-width: 750px;
+    margin: 0 auto;
+    font-family: var(--main-font);
+    font-size: 15px;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+
+/* =========================================
+   ОТЗЫВЫ — ЗАПИСКИ ПОКУПАТЕЛЕЙ
+========================================= */
+
+.reviews-block {
+    margin-top: 70px;
+}
+
+.reviews-block > h2 {
+    font-family: var(--heading-font);
+    font-size: 46px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 35px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.review-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    min-height: 230px;
+    background: #F7EEDC;
+    border: 1px solid rgba(52, 48, 42, 0.15);
+    box-shadow: 4px 5px 0 rgba(52, 48, 42, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Лёгкая асимметрия */
+
+.review-card:nth-child(2) {
+    background: #F0E7D4;
+    transform: rotate(1deg);
+}
+
+.review-card:nth-child(3) {
+    background: #F6E9D7;
+    transform: rotate(-1deg);
+}
+
+.review-card:hover {
+    transform: translateY(-6px) rotate(0);
+    box-shadow: 7px 10px 0 rgba(52, 48, 42, 0.1);
+}
+
+/* Рейтинг-пуговицы */
+
+
+/* Рейтинг — пуговицы из логотипа */
+
+.review-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.review-button {
+    position: relative;
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+
+    background: var(--mustard);
+    border: 2px solid #B98D2E;
+    border-radius: 50%;
+
+    transform: rotate(-12deg);
+}
+
+/* Четыре отверстия */
+
+.review-button::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+
+    background:
+        radial-gradient(circle at 20% 20%, var(--white) 0 1.3px, transparent 1.5px),
+        radial-gradient(circle at 80% 20%, var(--white) 0 1.3px, transparent 1.5px),
+        radial-gradient(circle at 20% 80%, var(--white) 0 1.3px, transparent 1.5px),
+        radial-gradient(circle at 80% 80%, var(--white) 0 1.3px, transparent 1.5px);
+}
+
+/* Пустая пуговица */
+
+.review-button--empty {
+    background: #E6D8C2;
+    border-color: #D4C5AD;
+}
+
+
+/* Текст отзывов */
+
+.review-text {
+    font-family: var(--main-font);
+    font-size: 14px;
+    line-height: 1.8;
+    color: #4a443d;
+    font-style: italic;
+    margin-bottom: 22px;
+    flex-grow: 1;
+}
+
+.review-author {
+    font-family: var(--main-font);
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 5px;
+}
+
+.review-date {
+    font-family: var(--main-font);
+    font-size: 11px;
+    color: #82796D;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+
+/* =========================================
+   АДАПТИВНОСТЬ
+========================================= */
+
+@media (max-width: 900px) {
+    .delivery-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .return-block {
+        padding: 50px 35px;
+    }
+}
+
+@media (max-width: 600px) {
+    .delivery-card {
+        padding: 30px 23px;
+    }
+
+    .delivery-card h2,
+    .return-block h2,
+    .reviews-block > h2 {
+        font-size: 36px;
+    }
+
+    .return-block {
+        padding: 45px 25px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .review-card:nth-child(2),
+    .review-card:nth-child(3) {
+        transform: none;
+    }
+}

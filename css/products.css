@@ -1,0 +1,155 @@
+/* ==============================
+   СТРАНИЦА ТОВАРА (PRODUCT PAGE)
+================================ */
+
+.product-page {
+    padding: 40px 9% 80px;
+}
+
+/* Хлебные крошки */
+.product-breadcrumbs {
+    margin-bottom: 40px;
+    font-size: 12px;
+    color: #82796D;
+    display: flex;
+    gap: 10px;
+}
+
+.product-breadcrumbs a:hover {
+    color: var(--brick);
+}
+
+/* Сетка: фото слева, текст справа */
+.product-detail {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr; /* Левая колонка чуть уже */
+    gap: 60px;
+    align-items: start;
+}
+
+/* Контейнер для фото */
+.product-detail__image {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.product-detail__image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: contain; /* Кольцо не обрежется */
+    display: block;
+}
+
+/* Информация о товаре */
+.product-detail__info {
+    padding-top: 10px;
+}
+
+.product-detail__title {
+    font-family: var(--heading-font);
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.product-detail__price {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--brick);
+    margin-bottom: 30px;
+}
+
+/* Характеристики (без лишних полосок) */
+.product-detail__specs {
+    list-style: none;
+    padding: 15px 0;
+    margin-bottom: 25px;
+    border-top: 1px solid rgba(52, 48, 42, 0.2); /* Линия только сверху */
+    border-bottom: 1px solid rgba(52, 48, 42, 0.2); /* Линия только снизу */
+}
+
+.product-detail__specs li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 8px; /* Отступ между строками */
+}
+
+.product-detail__specs li:last-child {
+    margin-bottom: 0; /* У последней строки отступа нет */
+}
+
+.product-detail__specs li span {
+    font-weight: 700;
+    color: var(--dark);
+}
+
+/* Описание (идет сразу под таблицей) */
+.product-detail__desc {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #625B50;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* Кнопка "Заказать" */
+.product-detail__btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: var(--brick);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background 0.3s;
+}
+
+.product-detail__btn:hover {
+    background: var(--dark);
+}
+
+/* Ссылка "Вернуться" */
+.product-detail__back {
+    display: block;
+    font-size: 13px;
+    color: #82796D;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.product-detail__back:hover {
+    color: var(--brick);
+}
+
+/* ==============================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ
+================================ */
+
+@media (max-width: 768px) {
+    .product-page {
+        padding: 20px 6% 60px;
+    }
+
+    .product-detail {
+        grid-template-columns: 1fr; /* В одну колонку */
+        gap: 30px;
+    }
+
+    .product-detail__image {
+        max-width: 100%;
+    }
+
+    .product-detail__title {
+        font-size: 36px;
+    }
+}
