@@ -147,3 +147,59 @@ function addToFavorites(productId) {
         alert('Этот товар уже в избранном.');
     }
 }
+
+// =========================================
+// 6. МОБИЛЬНОЕ МЕНЮ
+// =========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const navigation = document.getElementById('navigation');
+
+    if (!menuToggle || !navigation) return;
+
+    // Открытие и закрытие меню
+    menuToggle.addEventListener('click', () => {
+        const isOpen = navigation.classList.toggle('is-open');
+
+        menuToggle.classList.toggle('is-active', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen);
+        menuToggle.setAttribute(
+            'aria-label',
+            isOpen ? 'Закрыть меню' : 'Открыть меню'
+        );
+    });
+
+    // Закрытие после выбора пункта меню
+    navigation.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navigation.classList.remove('is-open');
+            menuToggle.classList.remove('is-active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Открыть меню');
+        });
+    });
+
+    // Закрытие при клике за пределами меню
+    document.addEventListener('click', (event) => {
+        if (
+            !navigation.contains(event.target) &&
+            !menuToggle.contains(event.target)
+        ) {
+            navigation.classList.remove('is-open');
+            menuToggle.classList.remove('is-active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Открыть меню');
+        }
+    });
+
+    // Закрытие клавишей Escape
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            navigation.classList.remove('is-open');
+            menuToggle.classList.remove('is-active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Открыть меню');
+        }
+    });
+});

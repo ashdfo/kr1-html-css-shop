@@ -44,7 +44,8 @@
 
 .chat-window {
     position: absolute;
-    right: 0;
+    left: 0;
+    right: auto;
     bottom: 78px;
     width: 360px;
     height: 500px;
@@ -215,7 +216,8 @@
 
 @media (max-width: 480px) {
     .chat-widget {
-        right: 15px;
+        left: 15px;
+        right: auto;
         bottom: 100px;
     }
 
@@ -245,7 +247,8 @@
 
 .chat-widget {
     position: fixed !important;
-    right: 30px !important;
+    left: 30px !important;
+    right: auto !important;
     bottom: 100px !important;
     z-index: 99999 !important;
 }

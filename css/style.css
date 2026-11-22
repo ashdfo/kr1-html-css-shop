@@ -1543,3 +1543,129 @@ button {
     transform: scale(1.1);
 }
 
+/* =========================================
+   МОБИЛЬНАЯ ШАПКА
+========================================= */
+
+/* На компьютере бургер не показываем */
+.mobile-menu-toggle {
+    display: none;
+}
+
+@media (max-width: 650px) {
+
+    /* ШАПКА */
+
+    .header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto auto;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 5%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .header__logo .logo-word {
+        font-size: 25px;
+    }
+
+    .header__actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .header-action svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    /* КНОПКА-БУРГЕР */
+
+    .mobile-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        width: 38px;
+        height: 38px;
+        padding: 5px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .mobile-menu-toggle span {
+        display: block;
+        width: 27px;
+        height: 2px;
+        background: var(--cream);
+        transition: 0.25s ease;
+    }
+
+    /* АНИМАЦИЯ БУРГЕРА */
+
+    .mobile-menu-toggle.is-active span:first-child {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.is-active span:last-child {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* МОБИЛЬНАЯ НАВИГАЦИЯ */
+
+    .navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 10px 5% 20px;
+        background: var(--dark);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        overflow: visible;
+        z-index: 1001;
+    }
+
+    .navigation.is-open {
+        display: flex;
+    }
+
+    .navigation > a,
+.nav-dropdown__toggle {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    font-size: 15px;
+    font-family: var(--main-font);
+    border-bottom: 1px solid rgba(255, 249, 239, 0.15);
+}
+
+.nav-dropdown {
+    width: 100%;
+}
+
+.nav-dropdown__toggle span {
+    display: none;
+}
+
+.nav-dropdown__menu {
+    display: none;
+}
+.nav-dropdown__toggle {
+    font-size: 15px !important;
+    font-family: var(--main-font) !important;
+    font-weight: 400;
+    line-height: normal;
+}
+}
