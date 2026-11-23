@@ -218,7 +218,7 @@
     .chat-widget {
         left: 15px;
         right: auto;
-        bottom: 100px;
+        bottom: 30px !important;
     }
 
     .chat-toggle {
