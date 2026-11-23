@@ -196,7 +196,7 @@ button {
 }
 
 .hero__eyebrow {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.13em;
     color: var(--olive);
@@ -299,7 +299,7 @@ button {
 .hero__handwritten {
     font-family: var(--hand-font);
     font-size: 32px;
-    color: var(--mustard);
+    color: var(--white);
     transform: rotate(-4deg);
     margin-bottom: 30px;
 }
@@ -342,7 +342,7 @@ button {
     display: block;
     margin-bottom: 9px;
     color: var(--brick);
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 800;
     letter-spacing: 2px;
     text-transform: uppercase;

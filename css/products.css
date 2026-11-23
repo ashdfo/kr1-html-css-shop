@@ -121,7 +121,8 @@
 /* Ссылка "Вернуться" */
 .product-detail__back {
     display: block;
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 700;
     color: #82796D;
     text-decoration: underline;
     transition: color 0.3s;

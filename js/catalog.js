@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // =====================================
+    //
     // ИЗБРАННОЕ
-    // =====================================
+    //
 
     function getFavoriteIds() {
         if (typeof getFavorites === 'function') {
@@ -108,9 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return conditions[condition] || '';
     }
 
-    // =====================================
+
     // СОЗДАНИЕ КАРТОЧКИ ТОВАРА
-    // =====================================
+
 
     function createProductCard(product) {
         const favorite = isFavorite(product.id);
@@ -159,9 +159,9 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
-    // =====================================
+
     // ФИЛЬТРАЦИЯ И СОРТИРОВКА
-    // =====================================
+
 
     function getFilteredProducts() {
         let filteredProducts = [...window.products];
@@ -229,9 +229,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return filteredProducts;
     }
 
-    // =====================================
+
     // ОТРИСОВКА КАТАЛОГА
-    // =====================================
 
     function renderProducts() {
         const filteredProducts = getFilteredProducts();
@@ -253,9 +252,9 @@ document.addEventListener('DOMContentLoaded', () => {
             .join('');
     }
 
-    // =====================================
+
     // ОБРАБОТКА КНОПОК ИЗБРАННОГО
-    // =====================================
+
 
     productsGrid.addEventListener('click', (event) => {
         const button = event.target.closest('.favorite-toggle');
@@ -305,9 +304,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// =====================================
+
 // ПОДСВЕТКА НАВИГАЦИИ
-// =====================================
+
 
 document.addEventListener('DOMContentLoaded', () => {
 

@@ -352,6 +352,7 @@
     color: #82796D;
     text-decoration: underline;
     transition: color 0.3s;
+    font-weight: 700;
 }
 
 .product-detail__back:hover {
