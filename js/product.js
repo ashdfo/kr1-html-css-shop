@@ -14,7 +14,7 @@ const productId = Number(params.get('id'));
 const product = window.products.find(item => item.id === productId);
 
 // Словари для красивого вывода
-const categoryNames = { clothing: 'одежда', interior: 'для дома', accessories: 'аксессуары' };
+const categoryNames = { clothing: 'Одежда', interior: 'Для дома', accessories: 'Аксессуары' };
 const conditionNames = { excellent: 'отличное', good: 'хорошее', satisfactory: 'удовлетворительное' };
 
 // Если товар найден

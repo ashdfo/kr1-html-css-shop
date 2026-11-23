@@ -263,8 +263,9 @@
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    right: 30px !important;
-    bottom: 100px !important;
+    left: 30px !important;
+    right: auto !important;
+    bottom: 30px !important;
     z-index: 99999 !important;
 }
 
@@ -272,8 +273,8 @@
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
-    width: 62px !important;
-    height: 62px !important;
+    width: 64px !important;
+    height: 64px !important;
     background: var(--olive) !important;
     border-radius: 50%;
 }
