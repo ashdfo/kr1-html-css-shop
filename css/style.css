@@ -1578,12 +1578,16 @@ button {
     /* ИКОНКИ КОРЗИНЫ И ЛИЧНОГО КАБИНЕТА */
 
     .header__actions {
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        gap: 12px;
-        order: 2;
-    }
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 12px;
+    order: 1;
+}
+
+.mobile-menu-toggle {
+    order: 2;
+}
 
     .header-action svg {
         width: 25px;
@@ -1681,15 +1685,36 @@ button {
         font-weight: 400;
         line-height: normal;
     }
-    /* ЦЕНТРИРОВАНИЕ ФУТЕРА НА МОБИЛЬНЫХ УСТРОЙСТВАХ */
+    /* МОБИЛЬНЫЙ ФУТЕР */
 
-.footer__column {
+.footer__main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "brand brand"
+        "nav contacts"
+        "socials socials"
+        "copyright copyright";
+    gap: 25px 15px;
+    text-align: center;
+}
+
+.footer__brand {
+    grid-area: brand;
+}
+
+.footer__column:not(.footer__contacts) {
+    grid-area: nav;
     text-align: center;
 }
 
 .footer__contacts {
-    justify-items: center;
+    grid-area: contacts;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    padding: 0;
 }
 
 .footer__contact-item {
@@ -1698,6 +1723,122 @@ button {
 }
 
 .footer__socials {
+    grid-area: socials;
     justify-content: center;
 }
+
+.footer__copyright {
+    grid-area: copyright;
+    text-align: center;
+}
+/* МОБИЛЬНЫЙ ФУТЕР */
+
+.footer {
+    padding: 40px 5% 20px;
+}
+
+.footer__main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+        "brand brand"
+        "nav contacts"
+        "socials socials"
+        "copyright copyright";
+    gap: 25px 15px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.footer__brand {
+    grid-area: brand;
+}
+
+.footer__column:not(.footer__contacts) {
+    grid-area: nav;
+    text-align: center;
+}
+
+.footer__contacts {
+    grid-area: contacts;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer__column h3 {
+    margin-bottom: 15px;
+}
+
+.footer__contact-item {
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    gap: 7px;
+    font-size: 12px;
+}
+
+.footer__socials {
+    grid-area: socials;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer__copyright {
+    grid-area: copyright;
+    text-align: center;
+    margin-top: 0 !important;
+}
+
+}
+@media (max-width: 650px) {
+
+    /* Контакты в мобильном подвале */
+    .footer__contacts {
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-width: 0;
+    }
+
+    .footer__contacts h3 {
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Каждый контакт — отдельная аккуратная строка */
+    .footer__contact-item {
+        display: grid;
+        grid-template-columns: 16px minmax(0, 1fr);
+        align-items: start;
+        gap: 8px;
+
+        width: 100%;
+        max-width: 190px;
+        margin: 0 auto 18px;
+
+        text-align: left;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .footer__contact-item svg {
+        width: 16px;
+        height: 16px;
+        margin-top: 2px;
+        flex-shrink: 0;
+    }
+
+    .footer__contact-item span,
+    .footer__contact-item a {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
 }
